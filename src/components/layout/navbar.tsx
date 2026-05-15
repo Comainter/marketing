@@ -28,7 +28,7 @@ export function Navbar() {
             </Link>
           ))}
         </div>
-        <ButtonLink href="https://apps.comainter.com" variant="secondary" className="h-9 px-3">
+        <ButtonLink href="https://app.comainter.com" variant="secondary" className="h-9 px-3">
           Login
           <ArrowRightIcon className="size-4" />
         </ButtonLink>
