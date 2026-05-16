@@ -15,9 +15,15 @@ const qualificationFlow = [
     detail: "Checks duplicates, setup mistakes, and known patterns",
     tone: "text-red-100",
   },
+
   {
     label: "Classify",
     detail: "Determines whether the report is actionable",
+    tone: "text-red-100",
+  },
+  {
+    label: "Tag & Assign",
+    detail: "Adds labels, identifies affected areas, and routes issues to the right maintainers",
     tone: "text-red-100",
   },
   {
@@ -59,7 +65,7 @@ export function IssueQualificationSection() {
             </div>
 
             <div className="terminal-grid p-4 sm:p-6">
-              <div className="grid gap-3 md:grid-cols-4">
+              <div className="grid gap-3 md:grid-cols-5">
                 {qualificationFlow.map((step, index) => (
                   <motion.div
                     key={step.label}
@@ -67,7 +73,7 @@ export function IssueQualificationSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.35, delay: index * 0.08 }}
-                    className="relative rounded-md border border-white/[0.08] bg-black/60 p-4"
+                    className="relative rounded-md border border-white/[0.08] bg-black/60 p-2"
                   >
                     {index !== qualificationFlow.length - 1 ? (
                       <ArrowRightIcon className="absolute -right-5 top-1/2 hidden size-4 -translate-y-1/2 text-zinc-700 md:block" />
@@ -111,8 +117,7 @@ export function IssueQualificationSection() {
                   </div>
 
                   <p className="mt-2 text-sm leading-6 text-zinc-400">
-                    Maintainers receive a concise report with reproduction context,
-                    related issues, suspected owner, and confidence signals.
+                    Maintainers receive a clean issue summary with reproduction steps, related issues, affected files, and debugging context.
                   </p>
                 </Panel>
               </div>
