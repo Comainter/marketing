@@ -107,9 +107,7 @@ export function HeroSection() {
           }}
           className="mt-8 max-w-3xl text-center text-lg leading-8 text-zinc-400 sm:text-xl"
         >
-          Comainter filters repetitive issue traffic, identifies configuration
-          mistakes, validates reproduction quality, and routes only meaningful
-          engineering problems to maintainers.
+          Comainter helps open-source teams scale by resolving repetitive developer questions, detecting common configuration errors, validating issue quality, and ensuring maintainers focus only on real engineering problems.
         </motion.p>
 
         {/* CTA */}
