@@ -2,15 +2,12 @@
 
 import type { CSSProperties } from "react";
 import { motion } from "motion/react";
-import { ArrowRightIcon } from "@/components/icons/icons";
+import {
+  ArrowRightIcon,
+  GraphIcon,
+  ShieldIcon,
+} from "@/components/icons/icons";
 import { ButtonLink } from "@/components/ui/button";
-
-const productSummary = [
-  "Finds duplicate issues and repeated setup failures before maintainers waste review time.",
-  "Detects possible version, dependency, or environment mismatch automatically.",
-  "Requests missing logs, repro steps, and diagnostics before humans get involved.",
-  "Routes high-signal issues to the correct maintainer with relevant repository context.",
-];
 
 const backgroundPackets = [
   {
@@ -57,41 +54,44 @@ const backgroundPackets = [
 
 export function HeroSection() {
   return (
-    <section className="relative isolate flex min-h-screen w-full items-center justify-center overflow-hidden">
+    <section className="relative isolate flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#0B0F17]">
       {/* BACKGROUND */}
       <div className="hero-physics">
         <div className="hero-room" aria-hidden="true">
-          <div className="infinity-grid" />
+          <div className="infinity-grid opacity-30" />
         </div>
 
         {backgroundPackets.map((packet, index) => (
           <span
             key={index}
-            className="signal-packet"
+            className="signal-packet opacity-50"
             style={packet as CSSProperties}
           />
         ))}
       </div>
 
+      {/* GLOW */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(231,71,60,0.14),transparent_45%)]" />
+
       {/* CONTENT */}
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-6 pb-24 pt-32 lg:px-8">
-    
+        
 
         {/* HEADING */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            duration: 0.8,
-            delay: 0.08,
+            duration: 0.7,
+            delay: 0.1,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="max-w-6xl text-center"
+          className="mt-8 text-center"
         >
-          <h1 className="text-balance text-5xl font-black tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl">
-            Protect maintainers
-            <span className="block text-[#E7473C]">
-              Attention 
+          <h1 className="max-w-5xl text-5xl font-black leading-[0.95] tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl">
+            Reduce maintainer load
+            <span className="mt-3 block bg-gradient-to-r from-[#E7473C] to-[#ff9f96] bg-clip-text text-transparent">
+              with repository-aware AI
             </span>
           </h1>
         </motion.div>
@@ -101,13 +101,16 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            duration: 0.8,
-            delay: 0.16,
+            duration: 0.7,
+            delay: 0.2,
             ease: [0.22, 1, 0.36, 1],
           }}
           className="mt-8 max-w-3xl text-center text-lg leading-8 text-zinc-400 sm:text-xl"
         >
-          Comainter helps open source Orgs scale by resolving repetitive developer questions, detecting common configuration errors, validating issue quality, and ensuring maintainers focus only on real engineering problems.
+          Automatically answer developer questions, detect recurring setup and
+          configuration issues, improve issue quality, and provide AI agents
+          with repository-specific engineering context before maintainers waste
+          time on repetitive work.
         </motion.p>
 
         {/* CTA */}
@@ -115,21 +118,23 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            duration: 0.8,
-            delay: 0.24,
+            duration: 0.7,
+            delay: 0.3,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="mt-10 flex flex-col gap-4 sm:flex-row"
+          className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
         >
-          <ButtonLink href="#early-access">
+          <ButtonLink href="#early-access" className="group">
             Get started
-            <ArrowRightIcon className="size-4" />
+            <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
           </ButtonLink>
 
           <ButtonLink href="#workflow" variant="secondary">
-            View Workflow
+            View workflow
           </ButtonLink>
         </motion.div>
+
+  
       </div>
     </section>
   );
