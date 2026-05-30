@@ -5,11 +5,11 @@ type ButtonVariant = "primary" | "secondary" | "ghost";
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "border-[#E7473C]/50 bg-[#E7473C] text-white shadow-[0_0_34px_rgba(231,71,60,0.18)] hover:border-[#E7473C] hover:bg-[#d83d33]",
+    "border-black bg-black text-white shadow-[0_14px_32px_rgba(24,24,27,0.14)] hover:border-zinc-800 hover:bg-zinc-800",
   secondary:
-    "border-[#E7473C]/24 bg-black/55 text-zinc-100 hover:border-[#E7473C]/55 hover:bg-[#E7473C]/[0.07] hover:text-white",
+    "border-zinc-200 bg-white text-black hover:border-zinc-300 hover:bg-zinc-50",
   ghost:
-    "border-transparent bg-transparent text-zinc-300 hover:bg-[#E7473C]/[0.06] hover:text-white",
+    "border-transparent bg-transparent text-zinc-700 hover:bg-zinc-100 hover:text-black",
 };
 
 type BaseProps = {
@@ -27,7 +27,7 @@ export function Button({
   return (
     <button
       className={cn(
-        "inline-flex h-10 items-center justify-center gap-2 rounded-md border px-4 text-sm font-bold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E7473C]/70",
+        "inline-flex h-10 items-center justify-center gap-2 rounded-md border px-4 text-sm font-bold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/60 focus-visible:ring-offset-2",
         variants[variant],
         className,
       )}
@@ -47,7 +47,7 @@ export function ButtonLink({
   return (
     <a
       className={cn(
-        "inline-flex h-10 items-center justify-center gap-2 rounded-md border px-4 text-sm font-bold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E7473C]/70",
+        "inline-flex h-10 items-center justify-center gap-2 rounded-md border px-4 text-sm font-bold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/60 focus-visible:ring-offset-2",
         variants[variant],
         className,
       )}

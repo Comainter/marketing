@@ -15,18 +15,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Comainter",
   description:
-    "Comainter validates, debugs, and qualifies developer issues before maintainers ever see them.",
+    "Comainter answers developer questions from your logs, docs, codebase, and knowledge graph.",
   keywords: [
-    "issue qualification",
-    "developer support infrastructure",
-    "maintainer workflow automation",
+    "developer support",
+    "github support automation",
+    "slack support automation",
+    "knowledge graph",
     "repository intelligence",
-    "developer ecosystem intelligence",
   ],
   openGraph: {
-    title: "Comainter | Issue Qualification Intelligence",
+    title: "Comainter | Answers for Developer Questions",
     description:
-      "Ensure only actionable issues reach engineering teams with repository-aware support intelligence.",
+      "Answer GitHub and Slack questions from logs, docs, codebase context, and a repository knowledge graph.",
     siteName: "Comainter",
     type: "website",
   },
