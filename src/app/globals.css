@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
-  --muted: #52525b;
-  --border: #e4e4e7;
+  --background: #000000;
+  --foreground: #ffffff;
+  --muted: #a1a1aa;
+  --border: rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
@@ -31,8 +31,8 @@ body {
 }
 
 ::selection {
-  background: #000000;
-  color: #ffffff;
+  background: #ffffff;
+  color: #000000;
 }
 
 .text-balance {

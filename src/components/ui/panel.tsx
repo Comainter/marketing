@@ -5,7 +5,7 @@ export function Panel({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       className={cn(
-        "rounded-lg border border-white/[0.08] bg-black/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] backdrop-blur-xl",
+        "rounded-2xl border border-white/[0.1] bg-zinc-950/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-xl",
         className,
       )}
       {...props}
@@ -17,7 +17,7 @@ export function Badge({ className, ...props }: HTMLAttributes<HTMLSpanElement>) 
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-md border border-[#E7473C]/20 bg-[#E7473C]/[0.055] px-2.5 py-1 text-xs font-bold text-red-100",
+        "inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.04] px-3 py-1 text-xs font-bold text-zinc-200",
         className,
       )}
       {...props}
@@ -50,7 +50,7 @@ export function SectionHeader({
 }) {
   return (
     <div className={cn("max-w-3xl", className)}>
-      <p className="mb-3 text-xs font-extrabold uppercase tracking-[0.22em] text-[#E7473C]">
+      <p className="mb-3 text-xs font-extrabold uppercase tracking-[0.22em] text-zinc-500">
         {eyebrow}
       </p>
       <h2 className="text-balance text-3xl font-extrabold tracking-tight text-white sm:text-4xl">

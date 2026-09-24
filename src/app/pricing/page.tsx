@@ -1,4 +1,5 @@
 import { ArrowRightIcon, ShieldIcon } from "@/components/icons/icons";
+import Footer from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { ButtonLink } from "@/components/ui/button";
 import { Panel } from "@/components/ui/panel";
@@ -13,7 +14,8 @@ export const metadata = {
 
 export default function PricingPage() {
   return (
-    <main id="top" className="min-h-screen">
+    <>
+    <main id="top" className="min-h-screen bg-[#07090d] text-white">
       <Navbar />
 
       <section className="relative mx-auto w-full max-w-7xl px-4 pb-20 pt-28 sm:px-6 lg:px-8">
@@ -178,7 +180,7 @@ export default function PricingPage() {
           </div>
 
           <div className="mt-10 divide-y divide-white/[0.08] rounded-xl border border-white/[0.08] bg-[#0d1117]">
-            {pricingFaqs.map((faq, index) => (
+            {pricingFaqs.map((faq) => (
               <details key={faq.question} className="group">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-5">
                   <span className="text-left text-sm font-medium text-white">
@@ -199,5 +201,7 @@ export default function PricingPage() {
         </div>
       </section>
     </main>
+    <Footer />
+    </>
   );
 }

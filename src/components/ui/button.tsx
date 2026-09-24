@@ -5,11 +5,11 @@ type ButtonVariant = "primary" | "secondary" | "ghost";
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "border-black bg-black text-white shadow-[0_14px_32px_rgba(24,24,27,0.14)] hover:border-zinc-800 hover:bg-zinc-800",
+    "border-white bg-white text-black shadow-[0_18px_44px_rgba(255,255,255,0.08)] hover:border-zinc-200 hover:bg-zinc-200",
   secondary:
-    "border-zinc-200 bg-white text-black hover:border-zinc-300 hover:bg-zinc-50",
+    "border-white/[0.14] bg-transparent text-zinc-100 hover:border-white/[0.28] hover:bg-white/[0.06]",
   ghost:
-    "border-transparent bg-transparent text-zinc-700 hover:bg-zinc-100 hover:text-black",
+    "border-transparent bg-transparent text-zinc-400 hover:bg-white/[0.06] hover:text-white",
 };
 
 type BaseProps = {
@@ -27,7 +27,7 @@ export function Button({
   return (
     <button
       className={cn(
-        "inline-flex h-10 items-center justify-center gap-2 rounded-md border px-4 text-sm font-bold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/60 focus-visible:ring-offset-2",
+        "inline-flex h-10 items-center justify-center gap-2 rounded-full border px-4 text-sm font-bold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black",
         variants[variant],
         className,
       )}
@@ -47,7 +47,7 @@ export function ButtonLink({
   return (
     <a
       className={cn(
-        "inline-flex h-10 items-center justify-center gap-2 rounded-md border px-4 text-sm font-bold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/60 focus-visible:ring-offset-2",
+        "inline-flex h-10 items-center justify-center gap-2 rounded-full border px-4 text-sm font-bold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black",
         variants[variant],
         className,
       )}
